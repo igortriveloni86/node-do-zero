@@ -14,6 +14,7 @@ Esta API permite realizar operações CRUD (Create, Read, Update, Delete) em um 
 - ✅ **Deletar vídeos** - Remover vídeos do catálogo
 - ✅ **Busca inteligente** - Filtrar vídeos por título usando ILIKE
 - ✅ **Persistência de dados** - Armazenamento em banco PostgreSQL (Neon)
+- ✅ **Deploy em produção** - Aplicação hospedada no Render
 
 ## 🛠️ Stack Tecnológica
 
@@ -33,6 +34,11 @@ Esta API permite realizar operações CRUD (Create, Read, Update, Delete) em um 
 - **ES Modules** - Sintaxe moderna de importação
 - **dotenv** - Gerenciamento de variáveis de ambiente
 - **REST Client** - Testes de API via arquivo `.http`
+
+### Deploy e Hospedagem
+
+- **Render** - Plataforma de deploy em nuvem
+- **Neon Database** - Banco PostgreSQL serverless integrado
 
 ## 🚀 Como Utilizar
 
@@ -83,6 +89,14 @@ Esta API permite realizar operações CRUD (Create, Read, Update, Delete) em um 
    ```
 
 O servidor estará rodando em `http://localhost:3333`
+
+## 🌐 Acesso à API em Produção
+
+A API está disponível online e pode ser acessada através da URL:
+
+**🔗 https://node-do-zero-8a7t.onrender.com**
+
+Você pode testar todos os endpoints diretamente usando esta URL base.
 
 ## 📡 Endpoints da API
 
@@ -170,7 +184,7 @@ O projeto inclui um arquivo `routes.http` com exemplos de todas as requisições
 
 ```http
 # 1. Criar um vídeo
-POST http://localhost:3333/videos
+POST https://node-do-zero-8a7t.onrender.com/videos
 Content-Type: application/json
 
 {
@@ -182,17 +196,17 @@ Content-Type: application/json
 ###
 
 # 2. Listar todos os vídeos
-GET http://localhost:3333/videos
+GET https://node-do-zero-8a7t.onrender.com/videos
 
 ###
 
 # 3. Buscar vídeos por título
-GET http://localhost:3333/videos?search=node
+GET https://node-do-zero-8a7t.onrender.com/videos?search=node
 
 ###
 
 # 4. Atualizar um vídeo (substitua o ID)
-PUT http://localhost:3333/videos/uuid-aqui
+PUT https://node-do-zero-8a7t.onrender.com/videos/8d063683-58c5-4d98-a14b-dcdd118011e0
 Content-Type: application/json
 
 {
@@ -204,10 +218,14 @@ Content-Type: application/json
 ###
 
 # 5. Deletar um vídeo (substitua o ID)
-DELETE http://localhost:3333/videos/uuid-aqui
+DELETE https://node-do-zero-8a7t.onrender.com/videos/8d063683-58c5-4d98-a14b-dcdd118011e0
 ```
 
-## 📁 Estrutura do Projeto
+### 🌍 Teste Online
+
+Você também pode testar a API diretamente no navegador ou com ferramentas como Postman usando a URL de produção:
+
+- **GET Videos:** https://node-do-zero-8a7t.onrender.com/videos## 📁 Estrutura do Projeto
 
 ```
 node-do-zero/
@@ -222,7 +240,30 @@ node-do-zero/
 └── 📄 README.md              # Documentação do projeto
 ```
 
-## 🔄 Scripts Disponíveis
+## � Deploy no Render
+
+A aplicação está hospedada no **Render**, uma plataforma de deploy moderna e gratuita:
+
+### 📋 Configuração do Deploy
+
+1. **Conecte seu repositório** GitHub ao Render
+2. **Configure as variáveis de ambiente:**
+
+   - `DATABASE_URL` - String de conexão do Neon Database
+   - `PORT` - Porta do servidor (Render define automaticamente)
+
+3. **Build Command:** `npm install`
+4. **Start Command:** `npm start`
+
+### 🌐 URL de Produção
+
+**https://node-do-zero-8a7t.onrender.com**
+
+### ⚡ Auto-deploy
+
+Toda alteração na branch `main` do GitHub automaticamente dispara um novo deploy!
+
+## �🔄 Scripts Disponíveis
 
 ```bash
 # Iniciar em modo desenvolvimento (auto-reload)
@@ -266,6 +307,7 @@ CREATE TABLE videos (
 - **CRUD Operations** - Create, Read, Update, Delete
 - **Environment Variables** - Configuração segura
 - **Database Integration** - Conexão com PostgreSQL
+- **Cloud Deploy** - Deploy em produção com Render
 - **Error Handling** - Tratamento de erros
 - **Code Organization** - Separação de responsabilidades
 
