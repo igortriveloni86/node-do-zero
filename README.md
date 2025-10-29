@@ -63,7 +63,7 @@ Esta API permite realizar operações CRUD (Create, Read, Update, Delete) em um 
 
    ```env
    DATABASE_URL='postgresql://username:password@host/database?sslmode=require'
-   PORT=3000
+   PORT=3333
    ```
 
 4. **Crie a tabela no banco de dados**
@@ -82,7 +82,7 @@ Esta API permite realizar operações CRUD (Create, Read, Update, Delete) em um 
    npm start
    ```
 
-O servidor estará rodando em `http://localhost:3000`
+O servidor estará rodando em `http://localhost:3333`
 
 ## 📡 Endpoints da API
 
@@ -170,7 +170,7 @@ O projeto inclui um arquivo `routes.http` com exemplos de todas as requisições
 
 ```http
 # 1. Criar um vídeo
-POST http://localhost:3000/videos
+POST http://localhost:3333/videos
 Content-Type: application/json
 
 {
@@ -182,17 +182,17 @@ Content-Type: application/json
 ###
 
 # 2. Listar todos os vídeos
-GET http://localhost:3000/videos
+GET http://localhost:3333/videos
 
 ###
 
 # 3. Buscar vídeos por título
-GET http://localhost:3000/videos?search=node
+GET http://localhost:3333/videos?search=node
 
 ###
 
 # 4. Atualizar um vídeo (substitua o ID)
-PUT http://localhost:3000/videos/uuid-aqui
+PUT http://localhost:3333/videos/uuid-aqui
 Content-Type: application/json
 
 {
@@ -204,7 +204,7 @@ Content-Type: application/json
 ###
 
 # 5. Deletar um vídeo (substitua o ID)
-DELETE http://localhost:3000/videos/uuid-aqui
+DELETE http://localhost:3333/videos/uuid-aqui
 ```
 
 ## 📁 Estrutura do Projeto

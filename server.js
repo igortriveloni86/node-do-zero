@@ -46,6 +46,7 @@ server.delete("/videos/:id", async (request, reply) => {
   return reply.status(204).send();
 });
 
-server.listen({ port: process.env.PORT || 3000, host: "0.0.0.0" }).then(() => {
-  console.log("Server running at http://localhost:3000");
+server.listen({
+  port: process.env.PORT ?? 3333,
+  host: "0.0.0.0",
 });
